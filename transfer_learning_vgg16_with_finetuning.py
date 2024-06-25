@@ -104,7 +104,7 @@ def plot_history(history):
 model = create_model()
 history = model.fit(
     datagen.flow(train_images, train_labels, batch_size=64),
-    epochs=20,  # Reduced from 50
+    epochs=20,
     validation_data=(val_images, val_labels),
     callbacks=[early_stopping, model_checkpoint, reduce_lr]
 )
@@ -125,7 +125,7 @@ model.compile(
 # Fine-tune the model
 history_finetune = model.fit(
     datagen.flow(train_images, train_labels, batch_size=64),
-    epochs=10,  # Reduced from 20
+    epochs=10,
     validation_data=(val_images, val_labels),
     callbacks=[early_stopping, model_checkpoint, reduce_lr]
 )
